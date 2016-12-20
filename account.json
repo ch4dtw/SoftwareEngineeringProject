@@ -1,0 +1,7 @@
+{
+  "admin":{"password":"admin","permission":"admin","integral":0,"lastLoginInfo":""},
+  "chad":{"password":"chad","permission":"admin","integral":0,"lastLoginInfo":""},
+  "wang":{"password":"wang","permission":"admin","integral":0,"lastLoginInfo":""},
+  "user":{"password":"user","permission":"user","integral":0,"lastLoginInfo":""},
+  "guest":{"password":"guest","permission":"guest","integral":0,"lastLoginInfo":""}
+}
