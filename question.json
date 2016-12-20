@@ -2,7 +2,7 @@
   "math":[
 		{
 			"questioner":"wang",
-			"title":"1+1=?",
+			"title":"1 + 1=?",
 			"integral":10,
 			"content":"What is the result of 1 + 1",
 			"answer":[{"name":"chad","data":"just 2 ,you're 87?","isBestAnswer":true},
@@ -10,7 +10,7 @@
 		},
 		{
 			"questioner":"user",
-			"title":"1*1=?",
+			"title":"1 * 1=?",
 			"integral":100,
 			"content":"What is the result of 1 + 1",
 			"answer":[{"name":"chad","data":"just 1 ,you're 87?","isBestAnswer":false},

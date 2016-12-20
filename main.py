@@ -6,6 +6,7 @@ content = open("question.json").read()
 questionList = json.loads(content)
 account = ""
 
+
 def login():
     global accountList,account
     username = raw_input("please enter the account : ")
@@ -20,9 +21,34 @@ def login():
 def submit():
     print "no such features yet"
     pass
-def search():
-    pass
+
 def lists():
+    print ""
+    for classs in questionList:
+        print classs
+    print ""
+    classs = raw_input("Which class do you want to see? : ")
+    i = 0
+    print ""
+    for question in questionList[classs]:
+        print i+1, ". title = ", question['title']
+        i = i+1
+    print ""
+    questionNumber = input("Which Question do you want? ")
+    print ""
+    question = questionList[classs][questionNumber-1]
+    print "class = ", classs
+    print "title = ", question['title']
+    print "name = " , question['questioner']
+    for answer in question['answer']:
+        print "#############################"
+        if answer['isBestAnswer'] == True:
+            print "This is Best Answer!!"
+        print "name = ", answer['name'], ", integral = ", accountList[answer['name']]['integral']
+        print "Answer = ", answer['data']
+    print ""
+
+def search():
     pass
 def settings():
     pass
@@ -34,8 +60,10 @@ while(1):
         choise = raw_input("Enter your option : ")
         if choise == '1':
             login()
-        else:
+        elif choise == '2':
              submit()
+        else:
+            print "fork u :p"
     else:
         print "1.Class List"
         print "2.Search"
@@ -48,6 +76,8 @@ while(1):
             search()
         elif choise == '3' and accountList[account]['permission'] == 'admin':
             settings()
+        else:
+            print "fork u :p"
                 
              
 
