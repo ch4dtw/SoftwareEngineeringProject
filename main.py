@@ -1,4 +1,5 @@
 import json
+import string
 
 content = open("account.json").read()
 accountList = json.loads(content)
@@ -44,8 +45,18 @@ def lists():
     except:
         print "No such class Bro"
         return
-    questionNumber = input("Which Question do you want? ")
-    if accountList[account]['permission'] == 'admin' and questionNumber == 0:
+    questionNumber = input("Which Question do you want?(enter 0 to ask quesitons) ")
+    if questionNumber == 0:
+        question = {}
+        question['questioner'] = account
+        question['title'] = raw_input("Tell me the title(0 as exit) : ")
+        question['integral'] = raw_input("How many integral do you want to give : ")
+        question['content'] = raw_input("What's the question's content : ")
+        question['answer'] = []
+        questionList[classs].append(question)
+        print ""
+        return 
+    if accountList[account]['permission'] == 'admin' and questionNumber == -1:
         deleteNumber = input("Please enter the nubmer you want to delete(0 as cancel) ")
         if deleteNumber == 0:
             return 
@@ -59,12 +70,25 @@ def lists():
         print "class = ", classs
         print "title = ", question['title']
         print "name = " , question['questioner']
-        for answer in question['answer']:
+        print "content = ", question['content']
+        best = False
+        for index, answer in enumerate(question['answer']):
             print "#############################"
+            print "Answer ", index+1
             if answer['isBestAnswer'] == True:
                 print "This is Best Answer!!"
+                best = True
             print "name = ", answer['name'], ", integral = ", accountList[answer['name']]['integral']
             print "Answer = ", answer['data']
+        if question['questioner'] == account and best == False:
+            setBest = raw_input("There is no Best answer, do you want to set?(yes/no) : ")
+            if string.lower(setBest) == "yes":
+                bestNumber = input("Which answer is the best : ")
+                questionList[classs][questionNumber-1]['answer'][bestNumber-1]['isBestAnswer'] = True
+            else:
+                return 
+            
+            
         print ""
     except:
         print "No fucking Question bro"
