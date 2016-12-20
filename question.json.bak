@@ -1,0 +1,30 @@
+{
+  "math":[
+		{
+			"questioner":"wang",
+			"title":"1 + 1=?",
+			"integral":10,
+			"content":"What is the result of 1 + 1",
+			"answer":[{"name":"chad","data":"just 2 ,you're 87?","isBestAnswer":true},
+				  {"name":"user","data":"R u 87?","isBestAnswer":false}]
+		},
+		{
+			"questioner":"user",
+			"title":"1 * 1=?",
+			"integral":100,
+			"content":"What is the result of 1 + 1",
+			"answer":[{"name":"chad","data":"just 1 ,you're 87?","isBestAnswer":false},
+				  {"name":"wang","data":"It's 2.\nR u 87?","isBestAnswer":false}]
+		}
+	],
+  "english":[
+		{
+			"questioner":"chad",
+			"title":"What is 87 means",
+			"integral":100,
+			"content":"What is the \"87\" means??",
+			"answer":[]
+		}
+
+	]
+}
