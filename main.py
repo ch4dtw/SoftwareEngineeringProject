@@ -43,7 +43,7 @@ def lists():
             i = i+1
         print ""
     except:
-        print "No such class Bro"
+        print "No such class Bro, Fork u"
         return
     questionNumber = input("Which Question do you want?(enter 0 to ask quesitons) ")
     if questionNumber == 0:
@@ -61,8 +61,11 @@ def lists():
         if deleteNumber == 0:
             return 
         else :
-            print "\n", questionList[classs][deleteNumber-1]['title'], "deleted!!", "\n"
-            questionList[classs].pop(deleteNumber-1)
+            try:
+                print "\n", questionList[classs][deleteNumber-1]['title'], "deleted!!", "\n"
+                questionList[classs].pop(deleteNumber-1)
+            except:
+                print "No such question Bro, Fork u"
             return 
     print ""
     try:
@@ -87,8 +90,6 @@ def lists():
                 questionList[classs][questionNumber-1]['answer'][bestNumber-1]['isBestAnswer'] = True
             else:
                 return 
-            
-            
         print ""
     except:
         print "No fucking Question bro"
@@ -112,7 +113,7 @@ def search():
                         print "Answer = ", answer['data']
                     print ""
                 except:
-                    print "No fucking Question bro"
+                    print "No forking Question bro"
                     return 
                     
 
@@ -125,15 +126,20 @@ def settings():
         if classs == '0':
             return
         else:
-             questionList[classs] = {}
+             questionList[classs] = [] 
     elif choise == '2':
         classs = raw_input("Which class do you want to delete(0 as cancel) : ")
         if classs == '0':
             return
         else:
-            print classs, " deleted!!"
-            del questionList[classs]
+            try:
+                print classs, " deleted!!"
+                del questionList[classs]
+            except:
+                print "No such Class, Fork u"
         pass
+    else:
+        print "fork u"
     print ""
 
 while(1):
